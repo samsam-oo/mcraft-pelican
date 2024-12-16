@@ -57,7 +57,7 @@ class StoreServerRequest extends ApplicationApiRequest
             'deploy' => 'sometimes|required|array',
             'deploy.locations' => 'array',
             'deploy.locations.*' => 'required_with:deploy.locations,integer|min:1',
-            'deploy.dedicated_ip' => 'required_with:deploy,boolean',
+            'deploy.dedicated_ip' => 'required_with:deploy|boolean',
             'deploy.port_range' => 'array',
             'deploy.port_range.*' => 'string',
             'start_on_completion' => 'sometimes|boolean',
@@ -122,16 +122,8 @@ class StoreServerRequest extends ApplicationApiRequest
             return !$input->deploy;
         });
 
-        /** @deprecated use tags instead */
-        $validator->sometimes('deploy.locations', 'present', function ($input) {
-            return $input->deploy;
-        });
 
         $validator->sometimes('deploy.tags', 'present', function ($input) {
-            return $input->deploy;
-        });
-
-        $validator->sometimes('deploy.port_range', 'present', function ($input) {
             return $input->deploy;
         });
     }
