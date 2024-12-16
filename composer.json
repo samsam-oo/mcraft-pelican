@@ -1,6 +1,12 @@
 {
     "name": "pelican-dev/panel",
     "description": "The free, open-source game management panel. Supporting Minecraft, Spigot, BungeeCord, and SRCDS servers.",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/samsam-oo/sso-pelican.git"
+        }
+    ],
     "require": {
         "php": "^8.2 || ^8.3",
         "ext-intl": "*",
@@ -31,6 +37,7 @@
         "predis/predis": "~2.1.1",
         "ryangjchandler/blade-tabler-icons": "^2.3",
         "s1lentium/iptools": "~1.2.0",
+        "samsam-oo/sso-pelican": "dev-main",
         "socialiteproviders/authentik": "^5.2",
         "socialiteproviders/discord": "^4.2",
         "socialiteproviders/steam": "^4.2",
